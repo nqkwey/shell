@@ -89,7 +89,6 @@ class Shell {
       Encoding encoding: utf8,
       List<int> acceptedExitCodes: const [0]}) async {
     var p = await start(executable, arguments: arguments);
-    await p.expectExitCode(acceptedExitCodes);
     return await p.stdout.readAsString(encoding: encoding);
   }
 }
